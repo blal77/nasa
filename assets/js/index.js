@@ -105,3 +105,18 @@ function display(list) {
     document.getElementById("launches-grid").innerHTML = blackBox
 }
 api()
+const toggleBtn = document.getElementById("sidebar-toggle");
+const aside = document.querySelector("aside");
+
+toggleBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    aside.classList.toggle("sidebar-open");
+});
+
+aside.addEventListener("click", e => {
+    e.stopPropagation();
+});
+
+window.addEventListener("click", () => {
+    aside.classList.remove("sidebar-open");
+});
